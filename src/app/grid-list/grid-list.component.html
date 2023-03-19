@@ -23,7 +23,7 @@
                             <td>{{items.email}}</td>
                             <td>{{items.body}}</td>
                     
-                            <td><img src="../../assets/images/no-cover.gif" width="100px"></td>
+                            <td><img src="/assets/images/no-cover.gif" width="100px"></td>
                             <button type="button" class="btn btn-danger" (click)="delete(items)">Delete</button>
                     
                         </tr>
@@ -37,7 +37,7 @@
         <div class="row" *ngIf = "mode=='list'" >
             <div class="card" *ngFor = "let items of gridlist">
                 <div class="img-container">
-                    <img src="assets/images/no-cover.gif" class="card-img-top">
+                    <img src="/assets/images/no-cover.gif" class="card-img-top">
                 </div>
                 <div class="card-body">
                     <div class="card-heading">
