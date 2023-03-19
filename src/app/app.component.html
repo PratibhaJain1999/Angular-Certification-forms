@@ -1,0 +1,5 @@
+<app-header (tabComponent)="navigateTab($event)" (gridListView)="addNewProject($event)" (newProjectEvent)="newProjectEventt($event)" ></app-header>
+<app-grid-list [griddddlisttt]="newProjecttt" *ngIf="tabSelected=='grid-list'" [addGrid]="addGridListt"></app-grid-list>
+<app-auth *ngIf="tabSelected=='auth'"></app-auth>
+<h3 *ngIf="tabSelected==''">Hello..!! Fill forms here for Certification Exam..!!</h3>
+<img src="../assets/images/fillform.jpg" class="formfill" *ngIf="tabSelected==''">

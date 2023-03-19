@@ -1,0 +1,75 @@
+<p>grid-list works!</p>
+<p>No Projects to show</p>
+<div >
+<div class="row" >
+    <div class="container">
+   
+        <button type="button" class="btn btn-primary" (click)="gridlists()">{{mode=='grid' ? 'grid' : 'list'}}</button>
+        <br><br>
+                    <table border="2px" cellpadding="20" class="ml-5"  *ngIf="mode=='grid'" >
+                        <thead>
+                            <th>Id</th>
+                    
+                            <th>Post_Id</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Body</th>
+                            <th>CoverImage</th>
+                            <th></th>
+                        </thead>
+                        <tr *ngFor="let items of gridlist">
+                            <td>{{items.id}}</td>
+                            <td>{{items.post_id}}</td>
+                            <td>{{items.name}}</td>
+                            <td>{{items.email}}</td>
+                            <td>{{items.body}}</td>
+                    
+                            <td><img src="assets/images/no-cover.gif" width="100px"></td>
+                            <button type="button" class="btn btn-danger" (click)="delete(items)">Delete</button>
+                    
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        
+        <br>
+        <br>
+        
+        <div class="row" *ngIf = "mode=='list'" >
+            <div class="card" *ngFor = "let items of gridlist">
+                <div class="img-container">
+                    <img src="assets/images/no-cover.gif" class="card-img-top">
+                </div>
+                <div class="card-body">
+                    <div class="card-heading">
+                        <p>{{items.post_id}}</p>
+        
+                        <h4><b>{{items.name}}</b></h4>
+                         
+                    <div class="text">
+                        <p><b>{{items.body}}</b></p>
+                    </div>
+                    </div>
+                    </div>
+                    <button type="button" class="btn btn-danger" (click)="delete(items)">Delete</button>
+        
+        
+                    </div>
+                    </div>
+        
+      
+
+<!-- <div class="container"  *ngIf="mode=='list'">
+    <div class="row" id="filter-items">
+        <div class="mx-auto items">
+    <div class="card" style="width: 18rem; margin-left: 20px;" *ngFor="let items of gridlist">
+        <img class="card-img-top" [src]="items.coverImage">
+        <div class="card-body">
+          <h5 class="card-title">{{items.name}}</h5>
+          <p class="card-text">{{items.quantity}}</p>
+          <a href="#" class="btn btn-primary">Submit</a>
+        </div>
+      </div>
+</div>
+</div>
+</div> -->
