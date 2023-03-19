@@ -20,7 +20,7 @@ export class GridListComponent implements OnInit {
       name:'',
       email:'',
       body:'',
-      coverImage:'https://cdn.browshot.com/static/images/not-found.png',
+      coverImage:'',
 
     }
   ]
