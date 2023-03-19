@@ -1,5 +1,4 @@
 <p>grid-list works!</p>
-<p>No Projects to show</p>
 <div >
 <div class="row" >
     <div class="container">
@@ -24,7 +23,7 @@
                             <td>{{items.email}}</td>
                             <td>{{items.body}}</td>
                     
-                            <td><img src="assets/images/no-cover.gif" width="100px"></td>
+                            <td><img src="../../assets/images/no-cover.gif" width="100px"></td>
                             <button type="button" class="btn btn-danger" (click)="delete(items)">Delete</button>
                     
                         </tr>
@@ -59,17 +58,3 @@
         
       
 
-<!-- <div class="container"  *ngIf="mode=='list'">
-    <div class="row" id="filter-items">
-        <div class="mx-auto items">
-    <div class="card" style="width: 18rem; margin-left: 20px;" *ngFor="let items of gridlist">
-        <img class="card-img-top" [src]="items.coverImage">
-        <div class="card-body">
-          <h5 class="card-title">{{items.name}}</h5>
-          <p class="card-text">{{items.quantity}}</p>
-          <a href="#" class="btn btn-primary">Submit</a>
-        </div>
-      </div>
-</div>
-</div>
-</div> -->

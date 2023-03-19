@@ -68,8 +68,7 @@ export class HeaderComponent implements OnInit {
 
 
   gridList(){
-    // this.gridListt=true;
-    // this.gridEventt.emit('mndfkjewr')
+    
 
    
   }
@@ -82,7 +81,7 @@ this.showModal=true
 
 this.gridListView.emit(true)
 
-// this.gridListt=false
+
 
     
   }
@@ -118,20 +117,7 @@ fetchData()
           this.http.post('https://certification-forms-default-rtdb.firebaseio.com/listarray.json',this.listFormArray).subscribe(responsiveData=>{
             this.listFormArray=responsiveData
                   }          )}
-        // const listOfArray=this.gridListServ.getList();
-        // this.http.post('https://certification-forms-default-rtdb.firebaseio.com/listarray.json',listOfArray).subscribe(responsiveData=>{
-  
-        // })
-        
-        // else{
-        
-        //     this.http.get('https://certification-forms-default-rtdb.firebaseio.com/listarray.json').subscribe(responsiveData=>{
-        //     this.gridListServ.setListValue(responsiveData);
-        //     this.gridListServ.getListVlaue().subscribe(res=>{
-        //       this.listFormArray=res
-        //     })
-        //     })
-        // }
+   
       })
     
     

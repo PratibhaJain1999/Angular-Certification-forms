@@ -33,7 +33,6 @@ export class GridListComponent implements OnInit {
   @Output()deleteList=new EventEmitter();
   @Output() gridListView=new EventEmitter()
   @Output() gridListAdd=new EventEmitter()
-  // @Input() addGrid:any
   @Input() griddddlisttt:any
   
   constructor(private gritlistserv:GridListService, private appServ:AppservicesService) { }
@@ -52,8 +51,7 @@ export class GridListComponent implements OnInit {
   }
   gridlists(){
 
-    // this.gridListView.emit('jmdeg3rui')
-    //  this.gridlist=this.gridListAdd.emit(true)
+    
     if(this.mode=='grid'){
       this.mode='list'
     }
