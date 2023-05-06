@@ -24,16 +24,17 @@ export class GridListComponent implements OnInit {
 
     }
   ]
+  isLoading=false
   @Input()addGrid:any
- 
-  
-
- 
 
   @Output()deleteList=new EventEmitter();
   @Output() gridListView=new EventEmitter()
   @Output() gridListAdd=new EventEmitter()
   @Input() griddddlisttt:any
+
+  @Input() projectListArray: any;
+  @Output() saveDisabled = new EventEmitter();
+  @Input() projectAdded:any
   
   constructor(private gritlistserv:GridListService, private appServ:AppservicesService) { }
 
@@ -41,9 +42,17 @@ export class GridListComponent implements OnInit {
   
   }
   ngOnChanges(changes:SimpleChanges) {
-    if (changes['griddddlisttt'] && changes['griddddlisttt'].currentValue)
+
+
+    if (changes['projectListArray'] && changes['projectListArray'].currentValue)
     {
-        this.gridlist.push(changes['griddddlisttt'].currentValue )
+        this.gridlist = changes['projectListArray'].currentValue
+
+    }
+    if (changes['projectAdded'] && changes['projectAdded'].currentValue)
+    {
+        this.gridlist.push(changes['projectAdded'].currentValue);
+        // this.appServ.upDateList(this.gridlist)
 
     }
     
@@ -77,8 +86,10 @@ export class GridListComponent implements OnInit {
           'success'
         )
         console.log(items);
-        let index=this.gridlist.indexOf(items)
-        this.gridlist.splice(index,1)
+        // let index=this.gridlist.indexOf(items)
+        // this.gridlist.splice(index,1)
+        // this.appServ.upDateList(this.gridlist)
+
       }
     
           

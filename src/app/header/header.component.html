@@ -1,112 +1,83 @@
-<nav class="navbar navbar-expand navbar-light bg-light">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a href="#" class="navbar-brand" (click)="showTab('')">Certification-Forms</a>
+<div class="row">
+    <div class="container">
+        <div class="col-xs-12">
+            <div class="mx-auto mt-3">
+                <h1><span class="fa fa-list "><i class="ml-3">FORMS</i></span></h1>
+                <ul class="nav navbar-nav mt-5">
+                    <li>
+                        <button type="button" class="btn btn-primary bttn mr-5"
+                            (click)="showTab('auth')">Register/Login</button>
+                        <button type="button" class="btn btn-secondary bttn1 mr-5"
+                            (click)="showTab('grid-list')">GridList</button>
+
+                        <button type="button" class="btn btn-success bttn2 mr-5" (click)="createProject()">Create
+                            Project</button>
+                        <button type="button" class="btn btn-warning bttn3 mr-5" (click)="saveData()"
+                            [disabled]="saveDisabled">SaveData</button>
+                        <button type="button" class="btn btn-info bttn4 mr-5"
+                            (click)="fetchData()">fetchData</button><br><br>
+                    </li>
+                </ul>
+            </div>
         </div>
-       
-
-            <ul class="nav navbar-nav ml-auto">
-                <li>
-                    <a class="nav-link" href="#" (click)="showTab('auth')">Register/Login</a>
-                </li>
-                
-                <li>
-                </li>
-                <li>
-                    <a href="#" class="nav-link btn ml-2" (click)="showTab('grid-list')">GridList</a>
-
-                </li>
-                <li>
-                    <button type="button" class="btn btn-light ml-2" (click)="createProject()">Create Project</button>
-                
-                    <button type="button" class="btn btn-light ml-2" (click)="saveData()" disabled>SaveData</button>
-                    <button type="button" class="btn btn-light ml-2" (click)="fetchData()" >fetchData</button>
-                </li>
-              
-              </ul>
-
-
     </div>
-</nav>
-<div class="modal" [ngClass] = "{'d-block' : showModal}" id="myModel" >
+</div>
+
+<div class="modal" [ngClass]="{'d-block' : showModal}" id="myModel">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h2><i><b >Create New Project</b></i></h2>
+                <h2><i><b class="newproject">Create New Project</b></i></h2>
                 <button class="close" id="closebtn" (click)="closeBtn()"><b>&times;</b></button>
             </div>
-            <div class="modal-body">
-                <div class="mx-5">
+            <div class="modal-body mx-3">
+                <div class="">
                     <form (ngSubmit)="formAdded(addForm.value)" #addForm="ngForm">
-                        <button type="submit" class="btn btn-success" (click)="saveProject()"[disabled]="addForm.status=='INVALID'">Save</button>
-                        <button type="button" class="btn btn-danger ml-3" >Delete</button>
+                        <button type="submit" class="btn btn-success m-2" (click)="saveProject()"
+                            [disabled]="addForm.status=='INVALID'">Save</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
 
-             
+
                         <div class="row">
-                                <label>Post-Id:</label>
-                                <input type="text" 
-                                name="postid" 
-                                id="postid" 
-                                class="form-control"
-                                ngModel
-                                required
+                            <label>Post-Id:</label>
+                            <input type="number" name="postid" id="postid" class="form-control" ngModel required
                                 #postid="ngModel">
-                                <span class="defective-blocks" *ngIf="postid.status=='INVALID' && postid.touched"> Please enter a correct Post-Id.</span>
-        
-                            </div>
-                            <div class="row">
-                                <label>Name:</label>
-                                <input type="text" 
-                                 name="name"
-                                 id="name"
-                                  class="form-control"
-                                  ngModel
-                                  required 
-                                  #name="ngModel">
-                                  <span class="defective-blocks" *ngIf="name.status=='INVALID' && name.touched"> Please enter a correct Name.</span>
-        
-                            </div>
-                            <div class="row">
-                                <label>Email:</label>
-                                <input type="email" 
-                                name="email" 
-                                id="email" 
-                                class="form-control"
-                                ngModel
-                                required
+                            <span class="defective-blocks" *ngIf="postid.status=='INVALID' && postid.touched"> Please
+                                enter a correct Post-Id.</span>
+
+                        </div>
+                        <div class="row">
+                            <label>Name:</label>
+                            <input type="text" name="name" id="name" class="form-control" ngModel required
+                                #name="ngModel">
+                            <span class="defective-blocks" *ngIf="name.status=='INVALID' && name.touched"> Please enter
+                                a correct Name.</span>
+
+                        </div>
+                        <div class="row">
+                            <label>Email:</label>
+                            <input type="email" name="email" id="email" class="form-control" ngModel required
                                 #email="ngModel">
-                                <span class="defective-blocks" *ngIf="email.status=='INVALID' && email.touched"> Please enter a correct email.</span>
-        
-                            </div>
-                            <div class="row">
-                                <label>Body:</label>
-                                <input type="text" 
-                                name="body" 
-                                id="body" 
-                                class="form-control"
-                                ngModel
-                                required
+                            <span class="defective-blocks" *ngIf="email.status=='INVALID' && email.touched"> Please
+                                enter a correct email.</span>
+
+                        </div>
+                        <div class="row">
+                            <label>Body:</label>
+                            <input type="text" name="body" id="body" class="form-control" ngModel required
                                 #body="ngModel">
-                                <span class="defective-blocks" *ngIf="body.status=='INVALID' && body.touched"> Please enter something..!!.</span>
-        
-                            </div>
-                            <div class="row">
-                                <label>CoverImage:</label>
-                                <input type="text" 
-                                name="coverimg" 
-                                id="coverimg" 
-                                class="form-control"
-                                ngModel
-                                
+                            <span class="defective-blocks" *ngIf="body.status=='INVALID' && body.touched"> Please enter
+                                something..!!.</span>
+
+                        </div>
+                        <div class="row">
+                            <label>CoverImage:</label>
+                            <input type="text" name="coverimg" id="coverimg" class="form-control" ngModel
                                 #coverimg="ngModel">
-        
-                            </div>
-                            <br>
-                    <button type="button" class="btn btn-success" >Submit</button>
-    </form>
-       
+
+                        </div>
+                        <br>
+                        <button type="button" class="btn btn-success sub">Submit</button>
+                    </form>
+
                 </div>
-
-
-
-           

@@ -14,13 +14,13 @@ export class GridListService {
   constructor(private http:HttpClient) { }
  
   
-  setListValue(value:any) {
-    this.gridList.next(value);
-}
+//   setListValue(value:any) {
+//     this.gridList.next(value);
+// }
 
-getListVlaue() : Observable<projectModel[]> {
-    return this.gridList.asObservable();
-}
+// getListVlaue() : Observable<projectModel[]> {
+//     return this.gridList.asObservable();
+// }
  
  
   

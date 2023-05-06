@@ -1,7 +1,9 @@
-<app-header (tabComponent)="navigateTab($event)" (gridListView)="addNewProject($event)" (newProjectEvent)="newProjectEventt($event)" ></app-header>
-<app-grid-list [griddddlisttt]="newProjecttt" *ngIf="tabSelected=='grid-list'" [addGrid]="addGridListt"></app-grid-list>
+<div class="container">
+    <app-header (tabComponent)="navigateTab($event)" (gridListView)="addNewProject($event)" (newProjectEvent)="newProjectEventt($event)" (dataFetched) = "dataFetched($event)" (gridListbtn) = "gridListbtn($event)"></app-header>
+<app-grid-list [griddddlisttt]="newProjecttt" *ngIf="tabSelected=='grid-list'" [addGrid]="addGridList" [projectListArray] = "projectListArray" [projectAdded] = "projectAdded"></app-grid-list>
 <app-auth *ngIf="tabSelected=='auth'"></app-auth>
-<div class="container-fluid">
-    <h3 *ngIf="tabSelected==''">Hello..!! Fill forms here for Certification Exam..!!</h3>
-    <img src="/assets/images/fillform.jpg" *ngIf="tabSelected==''" class="formfill">
+ <!-- <app-project-form (dataFetched) = "dataFetched($event)" (newProjectEvent)="newProjectEventt($event)" ></app-project-form> -->
+
+    <!-- <app-project-form *ngIf="tabSelected=='fetchData'"></app-project-form> -->
+<img src="../assets/images/NoDataAvailable.jpeg" style="width: 400px; height: 300px; margin-left: 25%;" *ngIf="tabSelected==''">
 </div>

@@ -14,7 +14,7 @@ img{
     
 }
 .card-img-top{
-    width: 310px;
+    width: 250px;
     height: 200px;
     padding: 7px;
     cursor: pointer;
@@ -24,11 +24,24 @@ h4{
     font-size: 15px;
     
 }
+
 .close{
-    background-color: rgba(251, 109, 58, 0.1);
+    background-color:white;
     color: #FB6D3A;
     float: right;
     margin-left: 10px;    
     border-radius: 10px;
     font-size: 14px;
+}
+    .fa-trash{
+        color: red;
+        font-size: 20px;
+    }
+    .gridlist{
+        margin-left: 35%;
+        width: 15%;
+        border-radius: 10px;
+        font-size: 20px;
+        color: white;
+        background-color:darkorchid;
 }

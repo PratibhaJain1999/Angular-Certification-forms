@@ -10,7 +10,12 @@ import { AuthserviceService } from './authservice.service';
 })
 export class AuthComponent implements OnInit {
   register=true;
-  loading=false
+  loading=false;
+  success=false;
+  error=false;
+  errorMsg='any';
+  isLoading=false;
+
 
   constructor(private authserv:AuthserviceService) { }
 
@@ -21,40 +26,86 @@ export class AuthComponent implements OnInit {
     const email=addForm.value.email;
     const password=addForm.value.password;
     addForm.reset();
-    this.loading=true
+    this.isLoading=true
 
     this.authserv.signingUpForm(email,password).subscribe(dataResponse => {
      console.log(dataResponse);
-     this.loading=false
-    
+     this.error=false;
+     this.success=true;
+     this.isLoading=false;
+     if(this.success==true){
+      Swal.fire(
+        'Successfully',
+        'You are successfully registered',
+        'success'
+      )
+    }
+
+   
+    },
+    errorMeesage =>{
+      this.error=true
+    this.success=false 
+    this.isLoading=false
+    if(this.error==true ){
+      Swal.fire(
+        'Error',
+        ' not Registered Successfully..!!',
+        'error'
+      )
+      this.errorMsg=errorMeesage
+
+    }
+   
+        
     },
    
     
     )
-   
+    if(this.register== false){
+      this.error=false;
+      this.success=true;
+      this.isLoading=false;
+      {
+       Swal.fire(
+         'Successfully',
+         'Login successfully..!!',
+         'success'
+       )
      }
+ 
+    //   (     errorMeesage: string) =>{
+    //   this.error=true
+    // this.success=false 
+    // this.isLoading=false
+    // if(this.error==true && this.register==false){
+    //   Swal.fire(
+    //     'Error',
+    //     ' Not Login  Successfully..!!',
+    //     'error'
+    //   )
+    //   this.errorMsg=errorMeesage
+
+    // }
+   
+        
+    // }
+   
     
+     }
+
+ 
+    
+         
+     }
 
   
-  registerr(){
-    if(this.register==true){
-      Swal.fire(
-        'Successfully',
-        'Your successfully registered',
-        'success'
-      )
-    }
-   
-  }
+
   
   changeMode(){
     this.register=!this.register
    
-      Swal.fire(
-        'error',
-        'Your are not registered properly',
-        'error'
-      )
+      
     }
 
   

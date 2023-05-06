@@ -12,10 +12,11 @@ export class AppComponent {
   newProjecttt:any=[];
   addGridList=[]
   gridFormOpen:any=[]
-  clkGrid=false
+  // clkGrid=false
   tabSelected='';
-  showGridViewEvent:any=[]
-  addGridListt='hello'
+ 
+  projectListArray:any
+  projectAdded: any;
 
   navigateTab(event:any){
  console.log(event);
@@ -47,9 +48,14 @@ newProjectt(event:any){
 
 
 }
-listcomponent(){
-  this.clkGrid=true
 
+dataFetched(data: any) {
+  this.projectListArray = data;
+  this.tabSelected = 'grid-list';
+}
+
+gridListbtn(data:any) {
+  this.projectAdded = data;
 }
   
    

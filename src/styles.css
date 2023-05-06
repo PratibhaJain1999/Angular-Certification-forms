@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-    background-color:whitesmoke;
-}
+
+body {
+    background-image: url(../src/assets/images/ByI450B.webp );
+    font-family: 'Luckiest Guy', cursive;
+    /* font-size: 100%; */
+    background-size: cover;
+ background-repeat: no-repeat;}
