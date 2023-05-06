@@ -13,21 +13,19 @@ import { projectModel } from '../project-form/project model';
 })
 export class HeaderComponent implements OnInit {
   @Output()tabComponent=new EventEmitter();
-  @Output()newProjectBtn=new EventEmitter();
-  @Output()newProjectEvent=new EventEmitter()
   
-  @Output() gridListView=new EventEmitter()
+  @Output() addGridList=new EventEmitter();
+  @Output() fetchListArray=new EventEmitter();
  
 @ViewChild ('addForm')addForm!:NgForm
   showModal=false;
   newProjectAdd:any
- 
+  newProject= true
   listFormArray:any=[{
   }]
  
   gridlist=true
-  @Output() gridListbtn=new EventEmitter()
-// 
+  saveDisabled=true
 
   constructor( private gridListServ:GridListService,appServ:AppservicesService, private http:HttpClient) { 
   }
@@ -39,6 +37,9 @@ export class HeaderComponent implements OnInit {
 
   showTab(tab:any){
     this.tabComponent.emit(tab);
+    if(this.newProject==true){
+      this.showModal=false
+    }
 
 
 
@@ -52,15 +53,22 @@ export class HeaderComponent implements OnInit {
   }
   formAdded(addForm:NgForm){
     console.log(addForm)
-    this.newProjectAdd=new projectModel(  this.addForm.value.post_id,this.addForm.value.name, this.addForm.value.email,this.addForm.value.body,this.addForm.value.coverimg,);
-    this.gridListbtn.emit(this.newProjectAdd);
-    this.http.post('https://certification-forms-default-rtdb.firebaseio.com/addform.json',addForm).subscribe(rest=>{
-    rest
-    }
+    this.newProjectAdd=new projectModel(this.addForm.value.post_id,this.addForm.value.name, this.addForm.value.email,this.addForm.value.body,this.addForm.value.coverImg,);
+    this.addGridList.emit(this.newProjectAdd);
+    // this.http.post('https://certification-forms-default-rtdb.firebaseio.com/addform.json',addForm).subscribe(rest=>{
+    // rest;
+    // }
     
 
     
-    )}
+    // )
+    this.addForm.reset();
+    setTimeout(() => {
+      this.closeBtn()
+    }, 200);
+
+  
+}
   
     
   
@@ -79,20 +87,21 @@ export class HeaderComponent implements OnInit {
   createProject(){
 this.showModal=true
 
-this.gridListView.emit(true)
+// this.gridListbtn.emit(true);
 
 
 
     
   }
   saveData(){
-
+   
   }
  
-fetchData()
+  fetchData()
 
 {
-  this.newProjectEvent.emit(true)
+  
+  this.addGridList.emit(true)
   Swal.fire({
     title: 'Are you sure?',
     text: "You won't be able to revert this!",
@@ -106,6 +115,11 @@ fetchData()
     if (result.isConfirmed) {
       this.http.get('https://gorest.co.in/public/v2/comments').subscribe(res=>{
   this.listFormArray=res
+  if(this.listFormArray.length > 0){
+    this.saveDisabled=false;
+  }
+  this.fetchListArray.emit(res);
+  
 })
      
         Swal.fire(
@@ -114,17 +128,21 @@ fetchData()
           'success'
         )}
         else{
-          this.http.post('https://certification-forms-default-rtdb.firebaseio.com/listarray.json',this.listFormArray).subscribe(responsiveData=>{
+          this.http.get('https://certification-forms-default-rtdb.firebaseio.com/listarray.json',this.listFormArray).subscribe(responsiveData=>{
             this.listFormArray=responsiveData
-                  }          )}
-   
+            if (this.listFormArray.length > 0) {
+              this.saveDisabled = false;
+            }
+            this.fetchListArray.emit(responsiveData)
+          })
+        }
       })
+    }
+  }
     
     
     
    
-}
 
 
 
-}

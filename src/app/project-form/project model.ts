@@ -1,5 +1,5 @@
 export class projectModel{
-    postid:number;
+    post_id:number;
     name:string;
     email:string;
     body:string;
@@ -7,7 +7,7 @@ export class projectModel{
 
     constructor(pid:number, nam:string, email:string,body:string,coverimg:string)
     {
-        this.postid=pid;
+        this.post_id=pid;
         this.name=nam;
         this.email=email;
         this.body=body;

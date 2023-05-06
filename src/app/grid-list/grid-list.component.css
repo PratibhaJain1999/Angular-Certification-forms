@@ -13,6 +13,9 @@ img{
         width:22%;
     
 }
+.bttn{
+    text-align: center;
+}
 .card-img-top{
     width: 310px;
     height: 200px;
@@ -32,3 +35,7 @@ h4{
     border-radius: 10px;
     font-size: 14px;
 }
+    .fa-trash{
+        color: red;
+        font-size: 20px;
+    }

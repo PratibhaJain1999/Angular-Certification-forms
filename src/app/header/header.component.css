@@ -11,4 +11,56 @@
 input.ng-valid.ng-touched{
     border: 3px solid green;
 }
+.sub{
+    margin-left: -3%;
+}
+.newproject{
+    font-family: cursive;
+    color: deeppink;
+}
+text{
+    font-size: 35px;
+}
+  h1{
+    text-align: center;
+  }
+  i{
+    color: darkgreen;
+  }
+  path {
+    fill: transparent;
+  }
+  
+  text {
+    fill: #FF9800;
+  }
+  .fa-list{
+    color: darkblue;
+  }
+  
+  
+h3{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: purple;
+}
+button{
+    /* margin-left: 20%; */
+}
+.bttn{
+    border-radius: 35%;
+}
+.bttn1{
+    border-radius: 35%;
+}
+.bttn2{
+    border-radius: 35%;
+}.bttn3{
+    border-radius: 35%;
+
+}.bttn4{
+    border-radius: 35%;
+
+}.bttn5{
+    border-radius: 35%;
+}
 

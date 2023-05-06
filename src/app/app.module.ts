@@ -8,7 +8,6 @@ import { GridListComponent } from './grid-list/grid-list.component';
 import { FormGroup, FormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 import { ProjectFormComponent } from './project-form/project-form.component';
-import { appServices } from './app services';
 import { AppservicesService } from './appservices.service';
 
 @NgModule({

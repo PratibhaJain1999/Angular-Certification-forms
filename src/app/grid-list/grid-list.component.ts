@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChange, SimpleChanges } from '@angular/core';
 import Swal from 'sweetalert2';
-import { appServices } from '../app services';
 import { AppservicesService } from '../appservices.service';
 import { projectModel } from '../project-form/project model';
 import { GridListService } from './grid-list.service';
@@ -25,25 +24,27 @@ export class GridListComponent implements OnInit {
     }
   ]
   @Input()addGrid:any
- 
-  
-
- 
+  @Input()addList:any
 
   @Output()deleteList=new EventEmitter();
   @Output() gridListView=new EventEmitter()
   @Output() gridListAdd=new EventEmitter()
-  @Input() griddddlisttt:any
+  @Input() griddddlisttt:any;
+  @Input() theProjectListArray:any;
   
-  constructor(private gritlistserv:GridListService, private appServ:AppservicesService) { }
+  constructor( ) { }
 
   ngOnInit(): void {
   
   }
   ngOnChanges(changes:SimpleChanges) {
-    if (changes['griddddlisttt'] && changes['griddddlisttt'].currentValue)
+   
+    if (changes['theProjectListArray'] && changes['theProjectListArray'].currentValue){
+      this.gridlist=changes['theProjectListArray'].currentValue
+    }
+    if (changes['addList'] && changes['addList'].currentValue)
     {
-        this.gridlist.push(changes['griddddlisttt'].currentValue )
+        this.gridlist.push(changes['addList'].currentValue )
 
     }
     
