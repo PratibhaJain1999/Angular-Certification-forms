@@ -13,6 +13,7 @@ import { DatastorageService } from '../shared/datastorage.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+<<<<<<< HEAD
   @Output() tabComponent = new EventEmitter();
   // @Output() newProjectBtn = new EventEmitter();
   @Output() newProjectEvent = new EventEmitter()
@@ -29,6 +30,24 @@ export class HeaderComponent implements OnInit {
   gridlist = true;
   createProjectt = false
   constructor(private datastorage:DatastorageService, private appServ: AppservicesService, private http: HttpClient) {
+=======
+  @Output()tabComponent=new EventEmitter();
+  
+  @Output() addGridList=new EventEmitter();
+  @Output() fetchListArray=new EventEmitter();
+ 
+@ViewChild ('addForm')addForm!:NgForm
+  showModal=false;
+  newProjectAdd:any
+  newProject= true
+  listFormArray:any=[{
+  }]
+ 
+  gridlist=true
+  saveDisabled=true
+
+  constructor( private gridListServ:GridListService,appServ:AppservicesService, private http:HttpClient) { 
+>>>>>>> 73baabb41d6de6dadf2727d158f7ec3cbc273ba8
   }
   ngOnInit(): void {
   }
@@ -36,6 +55,15 @@ export class HeaderComponent implements OnInit {
   }
   showTab(tab: any) {
     this.tabComponent.emit(tab);
+<<<<<<< HEAD
+=======
+    if(this.newProject==true){
+      this.showModal=false
+    }
+
+
+
+>>>>>>> 73baabb41d6de6dadf2727d158f7ec3cbc273ba8
   }
   saveProject() {
   }
@@ -43,13 +71,26 @@ export class HeaderComponent implements OnInit {
   }
   formAdded(addForm: projectModel) {
     console.log(addForm)
+<<<<<<< HEAD
     this.newProjectAdd = new projectModel(this.addForm.value.post_id, this.addForm.value.name, this.addForm.value.email, this.addForm.value.body, this.addForm.value.coverimg,);
     this.gridListbtn.emit(this.newProjectAdd);
+=======
+    this.newProjectAdd=new projectModel(this.addForm.value.post_id,this.addForm.value.name, this.addForm.value.email,this.addForm.value.body,this.addForm.value.coverImg,);
+    this.addGridList.emit(this.newProjectAdd);
+    // this.http.post('https://certification-forms-default-rtdb.firebaseio.com/addform.json',addForm).subscribe(rest=>{
+    // rest;
+    // }
+    
+
+    
+    // )
+>>>>>>> 73baabb41d6de6dadf2727d158f7ec3cbc273ba8
     this.addForm.reset();
     setTimeout(() => {
       this.closeBtn()
     }, 200);
 
+<<<<<<< HEAD
     
   }
   gridList() {
@@ -70,6 +111,10 @@ export class HeaderComponent implements OnInit {
     
    
     }
+=======
+  
+}
+>>>>>>> 73baabb41d6de6dadf2727d158f7ec3cbc273ba8
   
   fetchData(){
     this.newProjectEvent.emit(true)
@@ -102,6 +147,7 @@ export class HeaderComponent implements OnInit {
             )
             
  
+<<<<<<< HEAD
       })}
       else {
         this.appServ.fetchGridList().subscribe(response =>{
@@ -111,11 +157,74 @@ export class HeaderComponent implements OnInit {
           if (this.listFormArray.length > 0) {
             this.saveDisabled = false;
             this.dataFetched.emit();
+=======
+  createProject(){
+this.showModal=true
+
+// this.gridListbtn.emit(true);
+>>>>>>> 73baabb41d6de6dadf2727d158f7ec3cbc273ba8
 
 
           }
 
+<<<<<<< HEAD
         }
       }
     )}}
+=======
+    
+  }
+  saveData(){
+   
+  }
+ 
+  fetchData()
+
+{
+  
+  this.addGridList.emit(true)
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Default Project!',
+    cancelButtonText:'From Database'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      this.http.get('https://gorest.co.in/public/v2/comments').subscribe(res=>{
+  this.listFormArray=res
+  if(this.listFormArray.length > 0){
+    this.saveDisabled=false;
+  }
+  this.fetchListArray.emit(res);
+  
+})
+     
+        Swal.fire(
+          'success!',
+          'Your file has been added.',
+          'success'
+        )}
+        else{
+          this.http.get('https://certification-forms-default-rtdb.firebaseio.com/listarray.json',this.listFormArray).subscribe(responsiveData=>{
+            this.listFormArray=responsiveData
+            if (this.listFormArray.length > 0) {
+              this.saveDisabled = false;
+            }
+            this.fetchListArray.emit(responsiveData)
+          })
+        }
+      })
+    }
+  }
+    
+    
+    
+   
+
+
+>>>>>>> 73baabb41d6de6dadf2727d158f7ec3cbc273ba8
 

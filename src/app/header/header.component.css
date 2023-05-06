@@ -12,6 +12,7 @@
 }
 input.ng-valid.ng-touched{
     border: 3px solid green;
+<<<<<<< HEAD
     box-shadow: 0 0 22px lightgreen inset;
 
 }
@@ -20,6 +21,43 @@ input.ng-valid.ng-touched{
 }
 button{
     margin-right: 29%;
+=======
+}
+.sub{
+    margin-left: -3%;
+}
+.newproject{
+    font-family: cursive;
+    color: deeppink;
+}
+text{
+    font-size: 35px;
+}
+  h1{
+    text-align: center;
+  }
+  i{
+    color: darkgreen;
+  }
+  path {
+    fill: transparent;
+  }
+  
+  text {
+    fill: #FF9800;
+  }
+  .fa-list{
+    color: darkblue;
+  }
+  
+  
+h3{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: purple;
+}
+button{
+    /* margin-left: 20%; */
+>>>>>>> 73baabb41d6de6dadf2727d158f7ec3cbc273ba8
 }
 .bttn{
     border-radius: 35%;
@@ -36,6 +74,7 @@ button{
     border-radius: 35%;
 
 }.bttn5{
+<<<<<<< HEAD
     border-radius: 40%;
 }
 h1{
@@ -56,4 +95,8 @@ h1{
     background-color:cornflowerblue;
 }
   
+=======
+    border-radius: 35%;
+}
+>>>>>>> 73baabb41d6de6dadf2727d158f7ec3cbc273ba8
 

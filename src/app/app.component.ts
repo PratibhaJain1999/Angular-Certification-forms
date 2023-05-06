@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'certification-exam';
   formsTabSelected='';
+<<<<<<< HEAD
   newProject=false
   newProjecttt:any=[];
   addGridList=[]
@@ -17,36 +18,29 @@ export class AppComponent {
  
   projectListArray:any
   projectAdded: any;
+=======
+ 
+  tabSelected='';
+  theProjectListArray: any;
+  addList:any
+>>>>>>> 73baabb41d6de6dadf2727d158f7ec3cbc273ba8
 
   navigateTab(event:any){
  console.log(event);
  this.tabSelected=event;
   }
-  newProjectEventt(event:any){
-  console.log(event);
-  
+ 
+  dataFetched(data:any){
+    this.theProjectListArray=data
+    this.tabSelected='grid-list';
 
   }
 
  
-  formsTabs(event:any)
-{
-this.formsTabSelected=event
-} 
-newGridList(event:any)   {
-  console.log(event)
-  this.gridFormOpen=event
-}
-addNewProject(event:any){
-  this.newProject=event
-  this.newProjecttt=event
-
-}
-newProjectt(event:any){
-  console.log('jmdbjyeg')
-  this.newProjecttt=event
+ 
 
 
+<<<<<<< HEAD
 }
 
 dataFetched(data: any) {
@@ -57,6 +51,14 @@ dataFetched(data: any) {
 gridListbtn(data:any) {
   this.projectAdded = data;
 }
+=======
+
+  addGridList(addData:any){
+
+  console.log(addData);
+  this.addList=addData
+>>>>>>> 73baabb41d6de6dadf2727d158f7ec3cbc273ba8
   
-   
+}
+
 }

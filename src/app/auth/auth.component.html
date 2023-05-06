@@ -1,8 +1,13 @@
 <div class="container">
     <div class="row">
         <div class="mx-auto">
+<<<<<<< HEAD
             <div style="text-align: center;">
                 <div class="spinner-border text-success" role="status"  *ngIf="isLoading">
+=======
+            <!-- <div style="text-align: center;">
+                <div class="spinner-border text-success" role="status">
+>>>>>>> 73baabb41d6de6dadf2727d158f7ec3cbc273ba8
                     <span >Loading...</span>
                   </div>            
                 </div>
@@ -16,7 +21,11 @@
                     
                 </div>
              
+<<<<<<< HEAD
                 <div class="col-xs-8">
+=======
+                <div class="row form">
+>>>>>>> 73baabb41d6de6dadf2727d158f7ec3cbc273ba8
                         <label>Email:</label>
                         <input type="email" 
                         name="email" 
@@ -29,8 +38,12 @@
                         <span class="defective-blocks" *ngIf="email.status=='INVALID' && email.touched"> Please enter a correct email.</span>
 
                     </div>
+<<<<<<< HEAD
                     <br>
                     <div class="col-xs-8">
+=======
+                    <div class="row form">
+>>>>>>> 73baabb41d6de6dadf2727d158f7ec3cbc273ba8
                         <label>Password:</label>
                         <input type="password" 
                          name="password"
@@ -45,10 +58,16 @@
                     </div>
                     <br>
                 
+<<<<<<< HEAD
                 <!-- <div class="row"> -->
                     <!-- <div class="col-xs-12 col-md-8 "> -->
                       <span>
                         <button type="submit" class="btn btn-success" [disabled]="addForm.status=='INVALID'">Switch to {{register? 'Register':'Login'}}</button>
+=======
+                <div class="row">
+                    <div class="col-xs-12 col-md-8 ">
+                        <button type="submit" class="btn btn-success" [disabled]="addForm.status=='INVALID'">{{register? 'Register':'Login'}}</button>
+>>>>>>> 73baabb41d6de6dadf2727d158f7ec3cbc273ba8
                         |
                         <button type="button" class="btn btn-primary" (click)="changeMode()"> Switch to {{register ? 'Login' : 'Register'}} </button>
                       </span>

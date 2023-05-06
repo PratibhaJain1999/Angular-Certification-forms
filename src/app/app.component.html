@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container">
     <app-header (tabComponent)="navigateTab($event)" (gridListView)="addNewProject($event)" (newProjectEvent)="newProjectEventt($event)" (dataFetched) = "dataFetched($event)" (gridListbtn) = "gridListbtn($event)"></app-header>
 <app-grid-list [griddddlisttt]="newProjecttt" *ngIf="tabSelected=='grid-list'" [addGrid]="addGridList" [projectListArray] = "projectListArray" [projectAdded] = "projectAdded"></app-grid-list>
@@ -7,3 +8,37 @@
     <!-- <app-project-form *ngIf="tabSelected=='fetchData'"></app-project-form> -->
 <img src="../assets/images/NoDataAvailable.jpeg" style="width: 400px; height: 300px; margin-left: 25%;" *ngIf="tabSelected==''">
 </div>
+=======
+
+<div class="container">
+    <app-project-form *ngIf="tabSelected=='fetchData'">fjyfuf</app-project-form>
+
+<app-header (tabComponent)="navigateTab($event)"
+     (fetchListArray)="dataFetched($event)"
+     (addGridList)="addGridList($event)"
+  ></app-header>
+<app-grid-list *ngIf="tabSelected=='grid-list'" 
+    [theProjectListArray]="theProjectListArray" [addList]="addList"></app-grid-list>
+<app-auth *ngIf="tabSelected=='auth'"></app-auth>
+
+ 
+<!-- <div id="simple_arc" class="ml-3">
+    <span class='w0'>S</span>
+    <span class='w1'>I</span>
+    <span class='w2'>M</span>
+    <span class='w3'>P</span>
+    <span class='w4'>L</span>
+    <span class='w5'>E</span>
+    <span class='w6'> </span>
+    <span class='w7'>A</span>
+    <span class='w8'>R</span>
+    <span class='w9'>C</span>
+</div> -->
+    <img src="../assets/images/NoDataAvailable.jpeg" alt="Image" class="rounded" style="height: 300px;" width="500px" *ngIf="tabSelected==''">
+
+</div>
+<!-- (gridListView)="addNewProject($event)"
+(newProjectEvent)="newProjectEv+entt($event)"
+ [griddddlisttt]="newProjecttt" 
+ [addGrid]="addGridListt" -->
+>>>>>>> 73baabb41d6de6dadf2727d158f7ec3cbc273ba8

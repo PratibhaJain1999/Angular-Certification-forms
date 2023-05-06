@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <div class="row" >
     <div class="container">
@@ -64,4 +65,62 @@
                     </div>
         
       
+=======
+<div class="row mb-5" >
+    <div class="mx-auto">
+        <div class="container">
 
+            <button type="button" class="btn btn-primary bttn" (click)="gridlists()">{{mode=='grid' ? 'grid' :
+                'list'}}</button>
+            <br><br>
+            <table border="2px" cellpadding="20" class="ml-5" *ngIf="mode=='grid'">
+                <thead>
+                    <th>Id</th>
+
+                    <th>Post_Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Body</th>
+                    <th>CoverImage</th>
+                    <th></th>
+                </thead>
+                <tr *ngFor="let items of gridlist ; let i=index">
+                    <td>{{i}}</td>
+                    <td>{{items.post_id}}</td>
+                    <td>{{items.name}}</td>
+                    <td>{{items.email}}</td>
+                    <td>{{items.body}}</td>
+
+                    <td><img src="assets/images/NoBookCover.jpg" width="100px"></td>
+                    <button type="button" class=" fas fa-trash float-right mr-2" (click)="delete(items)"></button>
+
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="row" *ngIf="mode=='list'">
+        <div class="card" *ngFor="let items of gridlist">
+            <div class="img-container">
+                <img src="/assets/images/no-cover.gif" class="card-img-top">
+            </div>
+            <div class="card-body">
+                <div class="card-heading">
+                    <p>{{items.post_id}}</p>
+
+                    <h4><b>{{items.name}}</b></h4>
+
+                    <div class="text">
+                        <p><b>{{items.body}}</b></p>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-danger" (click)="delete(items)">Delete</button>
+>>>>>>> 73baabb41d6de6dadf2727d158f7ec3cbc273ba8
+
+
+        </div>
+    </div>

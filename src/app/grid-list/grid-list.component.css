@@ -13,6 +13,9 @@ img{
         width:22%;
     
 }
+.bttn{
+    text-align: center;
+}
 .card-img-top{
     width: 250px;
     height: 200px;
@@ -37,6 +40,7 @@ h4{
         color: red;
         font-size: 20px;
     }
+<<<<<<< HEAD
     .gridlist{
         margin-left: 35%;
         width: 15%;
@@ -45,3 +49,5 @@ h4{
         color: white;
         background-color:darkorchid;
 }
+=======
+>>>>>>> 73baabb41d6de6dadf2727d158f7ec3cbc273ba8

@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+<<<<<<< HEAD
 
 body {
     background-image: url(../src/assets/images/ByI450B.webp );
@@ -6,3 +7,10 @@ body {
     /* font-size: 100%; */
     background-size: cover;
  background-repeat: no-repeat;}
+=======
+body {
+    background-color: whitesmoke;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 20px;
+  }
+>>>>>>> 73baabb41d6de6dadf2727d158f7ec3cbc273ba8

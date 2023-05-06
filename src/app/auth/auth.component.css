@@ -1,5 +1,9 @@
 .defective-blocks{
+<<<<<<< HEAD
     font-size: 20px;
+=======
+    font-size: 10px;
+>>>>>>> 73baabb41d6de6dadf2727d158f7ec3cbc273ba8
     color: red;
 }
  input.ng-invalid.ng-touched{
@@ -14,4 +18,8 @@ input.ng-valid.ng-touched{
 .form-control{
     /* width: 70%  */
     
+}
+.form{
+     text-align: center;
+     width: 50%;
 }

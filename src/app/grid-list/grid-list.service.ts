@@ -11,9 +11,12 @@ export class GridListService {
 
   
   
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) { 
+    
+  }
  
   
+<<<<<<< HEAD
 //   setListValue(value:any) {
 //     this.gridList.next(value);
 // }
@@ -21,6 +24,9 @@ export class GridListService {
 // getListVlaue() : Observable<projectModel[]> {
 //     return this.gridList.asObservable();
 // }
+=======
+ 
+>>>>>>> 73baabb41d6de6dadf2727d158f7ec3cbc273ba8
  
  
   
